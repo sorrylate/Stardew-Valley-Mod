@@ -45,6 +45,35 @@ namespace ToolDeliveryMail
                     //Checking your inventory space
                     if (Game1.player.freeSpotsInInventory() > 0)
                     {
+                         //Avoid trash can added to your inventory
+                        if (Game1.player.toolBeingUpgraded.Value.DisplayName == "Copper Trash Can")
+                        {
+                            Game1.drawObjectDialogue($"You receive {Game1.player.toolBeingUpgraded.Value.DisplayName}");
+                            Game1.player.trashCanLevel += 1;
+                            Game1.player.toolBeingUpgraded.Value = null;
+                            return;
+                        }
+                        else if (Game1.player.toolBeingUpgraded.Value.DisplayName == "Steel Trash Can")
+                        {
+                            Game1.drawObjectDialogue($"You receive {Game1.player.toolBeingUpgraded.Value.DisplayName}");
+                            Game1.player.trashCanLevel += 1;
+                            Game1.player.toolBeingUpgraded.Value = null;
+                            return;
+                        }
+                        else if (Game1.player.toolBeingUpgraded.Value.DisplayName == "Gold Trash Can")
+                        {
+                            Game1.drawObjectDialogue($"You receive {Game1.player.toolBeingUpgraded.Value.DisplayName}");
+                            Game1.player.trashCanLevel += 1;
+                            Game1.player.toolBeingUpgraded.Value = null;
+                            return;
+                        }
+                        else if (Game1.player.toolBeingUpgraded.Value.DisplayName == "Iridium Trash Can")
+                        {
+                            Game1.drawObjectDialogue($"You receive {Game1.player.toolBeingUpgraded.Value.DisplayName}");
+                            Game1.player.trashCanLevel += 1;
+                            Game1.player.toolBeingUpgraded.Value = null;
+                            return;
+                        }
 
                         //Add Tool upgrade to player inventory
                         Game1.drawObjectDialogue($"You receive {Game1.player.toolBeingUpgraded.Value.DisplayName}");
@@ -54,38 +83,9 @@ namespace ToolDeliveryMail
                         Game1.player.toolBeingUpgraded.Value = null;
                         return;
                     }
+                   
                     //if your inventory full dialogue
                     else Game1.drawObjectDialogue("Your inventory is full");
-
-                    //Avoid trash can added to your inventory
-                    if (Game1.player.toolBeingUpgraded.Value.DisplayName == "Copper Trash Can")
-                    {
-                        Game1.drawObjectDialogue($"You receive {Game1.player.toolBeingUpgraded.Value.DisplayName}");
-                        Game1.player.trashCanLevel += 1;
-                        Game1.player.toolBeingUpgraded.Value = null;
-                        return;
-                    }
-                    else if (Game1.player.toolBeingUpgraded.Value.DisplayName == "Steel Trash Can")
-                    {
-                        Game1.drawObjectDialogue($"You receive {Game1.player.toolBeingUpgraded.Value.DisplayName}");
-                        Game1.player.trashCanLevel += 1;
-                        Game1.player.toolBeingUpgraded.Value = null;
-                        return;
-                    }
-                    else if (Game1.player.toolBeingUpgraded.Value.DisplayName == "Gold Trash Can")
-                    {
-                        Game1.drawObjectDialogue($"You receive {Game1.player.toolBeingUpgraded.Value.DisplayName}");
-                        Game1.player.trashCanLevel += 1;
-                        Game1.player.toolBeingUpgraded.Value = null;
-                        return;
-                    }
-                    else if (Game1.player.toolBeingUpgraded.Value.DisplayName == "Iridium Trash Can")
-                    {
-                        Game1.drawObjectDialogue($"You receive {Game1.player.toolBeingUpgraded.Value.DisplayName}");
-                        Game1.player.trashCanLevel += 1;
-                        Game1.player.toolBeingUpgraded.Value = null;
-                        return;
-                    }
 
                 }
             }
